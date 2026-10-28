@@ -1,0 +1,17 @@
+name: p2pchat
+description: Private E2E-encrypted messenger, no server storage.
+publish_to: none
+version: 1.0.0
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  cryptography: ^2.7.0
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.3.2
+  web_socket_channel: ^3.0.1
+  flutter_webrtc: ^1.6.3
+  image_picker: ^1.1.2
+flutter:
+  uses-material-design: true
