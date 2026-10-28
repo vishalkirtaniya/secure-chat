@@ -7,7 +7,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
-const serverUrl = 'ws://10.236.145.112:8080';
+const serverUrl = 'wss://secure-chat-w1x3.onrender.com/';
 
 String _e(List<int> b) => base64Url.encode(b).replaceAll('=', '');
 List<int> _d(String s) => base64Url.decode(base64Url.normalize(s));

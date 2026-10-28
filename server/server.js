@@ -1,6 +1,8 @@
 // Stateless relay: keeps only live sockets in RAM. No DB, no logs, no message storage.
+const http = require('http');
 const { WebSocketServer } = require('ws');
-const wss = new WebSocketServer({ port: process.env.PORT || 8080 });
+const server = http.createServer((req, res) => { res.writeHead(200); res.end('ok'); });
+const wss = new WebSocketServer({ server });
 const peers = new Map();
 wss.on('connection', ws => {
   ws.on('message', d => {
@@ -13,3 +15,4 @@ wss.on('connection', ws => {
   });
   ws.on('close', () => { if (ws.id && peers.get(ws.id) === ws) peers.delete(ws.id); });
 });
+server.listen(process.env.PORT || 8080);
